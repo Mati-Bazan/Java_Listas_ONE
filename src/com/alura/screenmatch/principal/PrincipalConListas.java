@@ -4,8 +4,9 @@ import com.alura.screenmatch.modelos.Pelicula;
 import com.alura.screenmatch.modelos.Serie;
 import com.alura.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*;
+
+import static java.util.Collection.*;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -29,5 +30,20 @@ public class PrincipalConListas {
                 System.out.println(pelicula.getClasificacion());
             }
         }
+
+        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        listaDeArtistas.add("Penelope");
+        listaDeArtistas.add("Antonio");
+        listaDeArtistas.add("Ricardo");
+        System.out.println("Lista de artistas NO ordenada: " +listaDeArtistas);
+
+        Collections.sort(listaDeArtistas);
+        System.out.println("Lista de artistas ordenada: " +  listaDeArtistas);
+
+        Collections.sort(lista);
+        System.out.println("Lista de titulos: " + lista);
+
+        lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
+        System.out.println("Lista ordenada por fecha: "+lista);
     }
 }
